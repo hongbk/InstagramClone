@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 private enum ScreenState {
     case none
@@ -81,6 +82,10 @@ extension LoginViewController {
 
 extension LoginViewController {
     fileprivate func signIn(email: String, password: String) {
+        if (!Utitlities.isInternetAvailable()) {
+            Utitlities.showAlert(alert: "Alert", message: "You have no Internet. Please check your connection", vc: self)
+            return
+        }
         let address = "https://iossimple-instagram.herokuapp.com/api/users/login"
         let params: Parameters = [
             "user": [
@@ -91,14 +96,20 @@ extension LoginViewController {
         
         Alamofire.request(address, method: .post, parameters: params, encoding: JSONEncoding.default)
         .responseJSON { (response) in
-            print(response.response)
-            print(response.data)
-            print(response.result)
-            
-            if let JSON = response.result.value {
-                print("JSON: \(JSON)")
+            if let value = response.result.value{
+                let test = JSON(value)
+                let json = JSON(test["user"].dictionaryObject)
+                if (json.rawString() != nil) {
+                    let user = UserManager.parseUserFromJson(json: json)
+                    UserManager.saveUserData(userModel: user)
+                    print(user.token!)
+                    CPAppdelegate?.goToMainController()
+                } else {
+                    Utitlities.showAlert(alert: "Alert", message: "Invalid Email or Password ", vc: self)
+                }
             }
         }
+        
     }
     
     fileprivate func signUp(account: String, email: String, password: String) {
@@ -113,10 +124,6 @@ extension LoginViewController {
         
         Alamofire.request(address, method: .post, parameters: params, encoding: JSONEncoding.default)
             .responseJSON { (response) in
-                print(response.response)
-                print(response.data)
-                print(response.result)
-                
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
                 }

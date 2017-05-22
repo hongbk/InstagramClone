@@ -42,5 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    //MARK: Goto ViewController
+    
+    func goToMainController() {
+        
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+    }
 }
 

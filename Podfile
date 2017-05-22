@@ -8,5 +8,6 @@ target 'InstagramClone' do
   # Pods for InstagramClone
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
+  pod 'PKHUD', '~> 4.0'
 
 end

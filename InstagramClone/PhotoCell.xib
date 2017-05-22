@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="283" id="mnc-sr-RlP" customClass="PhotoCell" customModule="InstagramClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="412" height="283"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mnc-sr-RlP" id="6I2-Xm-C3j">
+                <rect key="frame" x="0.0" y="0.0" width="412" height="282.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrV-1D-SzK">
+                        <rect key="frame" x="28" y="18" width="366" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e6U-e1-dwe">
+                        <rect key="frame" x="18" y="49" width="376" height="120"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="adi-n3-Iaj"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odr-e7-O4r">
+                        <rect key="frame" x="28" y="179" width="366" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số lượt thích" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INp-R8-s5X">
+                        <rect key="frame" x="28" y="210" width="366" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZaZ-Np-Y5I">
+                        <rect key="frame" x="28" y="241" width="141.5" height="30"/>
+                        <state key="normal" title="Thích"/>
+                        <connections>
+                            <action selector="likeBtWasTapped:" destination="mnc-sr-RlP" eventType="touchUpInside" id="eVq-8b-w0q"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTx-nY-J3L">
+                        <rect key="frame" x="242.5" y="241" width="141.5" height="30"/>
+                        <state key="normal" title="Bình Luận"/>
+                        <connections>
+                            <action selector="commentBtWasTapped:" destination="mnc-sr-RlP" eventType="touchUpInside" id="N3S-cF-Q8u"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZaZ-Np-Y5I" firstAttribute="top" secondItem="INp-R8-s5X" secondAttribute="bottom" constant="10" id="018-mp-dOz"/>
+                    <constraint firstItem="MrV-1D-SzK" firstAttribute="leading" secondItem="6I2-Xm-C3j" secondAttribute="leadingMargin" constant="20" id="1pK-xX-J6v"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="MrV-1D-SzK" secondAttribute="trailing" constant="10" id="4hg-ox-sBr"/>
+                    <constraint firstItem="ZaZ-Np-Y5I" firstAttribute="width" secondItem="6I2-Xm-C3j" secondAttribute="height" multiplier="1:2" id="9dp-Cm-KJT"/>
+                    <constraint firstItem="ZaZ-Np-Y5I" firstAttribute="width" secondItem="HTx-nY-J3L" secondAttribute="width" id="C9u-1s-xZl"/>
+                    <constraint firstItem="e6U-e1-dwe" firstAttribute="leading" secondItem="6I2-Xm-C3j" secondAttribute="leadingMargin" constant="10" id="CoO-LI-3qE"/>
+                    <constraint firstItem="INp-R8-s5X" firstAttribute="top" secondItem="odr-e7-O4r" secondAttribute="bottom" constant="10" id="IVk-8I-Yet"/>
+                    <constraint firstItem="odr-e7-O4r" firstAttribute="leading" secondItem="6I2-Xm-C3j" secondAttribute="leadingMargin" constant="20" id="Kcg-3q-XWM"/>
+                    <constraint firstItem="MrV-1D-SzK" firstAttribute="top" secondItem="6I2-Xm-C3j" secondAttribute="topMargin" constant="10" id="T4w-QA-VV5"/>
+                    <constraint firstItem="INp-R8-s5X" firstAttribute="leading" secondItem="6I2-Xm-C3j" secondAttribute="leadingMargin" constant="20" id="VFu-wL-Tp9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="odr-e7-O4r" secondAttribute="trailing" constant="10" id="VmX-62-Mb8"/>
+                    <constraint firstItem="ZaZ-Np-Y5I" firstAttribute="leading" secondItem="6I2-Xm-C3j" secondAttribute="leadingMargin" constant="20" id="hX3-q7-Vmp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="e6U-e1-dwe" secondAttribute="trailing" constant="10" id="lr1-51-UhJ"/>
+                    <constraint firstItem="ZaZ-Np-Y5I" firstAttribute="height" secondItem="HTx-nY-J3L" secondAttribute="height" id="meR-qp-5AV"/>
+                    <constraint firstItem="e6U-e1-dwe" firstAttribute="top" secondItem="MrV-1D-SzK" secondAttribute="bottom" constant="10" id="oQY-fQ-RGG"/>
+                    <constraint firstItem="HTx-nY-J3L" firstAttribute="top" secondItem="INp-R8-s5X" secondAttribute="bottom" constant="10" id="qGi-o1-Jdi"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HTx-nY-J3L" secondAttribute="trailing" constant="20" id="tkq-XA-b5L"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="INp-R8-s5X" secondAttribute="trailing" constant="10" id="yXW-ap-SnE"/>
+                    <constraint firstItem="odr-e7-O4r" firstAttribute="top" secondItem="e6U-e1-dwe" secondAttribute="bottom" constant="10" id="z3F-Z4-oYi"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="commentButton" destination="HTx-nY-J3L" id="mxP-pW-UvS"/>
+                <outlet property="descriptionLB" destination="odr-e7-O4r" id="YeG-tu-y4O"/>
+                <outlet property="likeButton" destination="ZaZ-Np-Y5I" id="m7J-JZ-9H2"/>
+                <outlet property="numberLikeLabel" destination="INp-R8-s5X" id="XZB-38-VYu"/>
+                <outlet property="photo" destination="e6U-e1-dwe" id="3qI-Cz-Hzi"/>
+                <outlet property="titleLB" destination="MrV-1D-SzK" id="ADy-I7-Jw9"/>
+            </connections>
+            <point key="canvasLocation" x="432" y="52.5"/>
+        </tableViewCell>
+    </objects>
+</document>
